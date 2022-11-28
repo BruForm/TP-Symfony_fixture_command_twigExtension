@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MovieController!{% endblock %}
+
+{% block body %}
+    <h1>Liste des films</h1>
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <img style="height: 30px" src="{{ asset('uploads/movieImages/') ~ movie.imagePath }}"
+                     alt="Movie picture">
+                {{ movie.name }} / {{ movie.category }} / {{ movie.duration | format_time }}
+                / {{ movie | format_price }} / {{ movie | get_stars_html | raw }}
+                {# raw => va interpreter le code code html dans un string #}
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="navigation">
+        {{ knp_pagination_render(movies, ) }}
+    </div>
+{% endblock %}

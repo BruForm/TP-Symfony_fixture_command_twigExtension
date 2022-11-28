@@ -1,0 +1,10 @@
+App\Entity\Category:
+  category0:
+    name: 'Action'
+  category1:
+    name: 'Science-Fiction'
+  category2:
+    name: 'Fantastic'
+  category3:
+    name: 'Thriller'
+

@@ -1,0 +1,10 @@
+App\Entity\Movie:
+  movie{0..100}:
+    name: '<name()>'
+    duration: '<numberBetween(6000, 18000)>'
+    price: '<numberBetween(1000, 3000)>'
+    releaseddAt: "<dateTimeBetween('1975-01-01', '2022-12-31')>"
+    note: '<numberBetween(1, 5)>'
+    imagePath: 'LOGO-PB-637f3e9d968b9.png'
+# Creation d'une relation entre tables :
+    category: '@category*'
